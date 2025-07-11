@@ -46,7 +46,7 @@ const Dashboard = () => {
         const student = result.data.students[0] // Take first match
 
         // Get student with payment details
-        const detailResult = await studentAPI.getById(student.id)
+        const detailResult = await studentAPI.getById(student.ID)
 
         if (detailResult.success) {
           const studentData = detailResult.data.student

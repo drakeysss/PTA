@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_BASE_URL = import.meta.env.PROD ? 'http://localhost:8080/api' : '/api'
+const API_BASE_URL = 'http://localhost:8080/api'
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -12,6 +12,10 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
+    // Temporarily remove API-KEY header to fix CORS issues
+    // config.headers['API-KEY'] = 'daccfc89-ff47-4ce1-99bf-5ad2d8f57282'
+
+    // Add Authorization header for authenticated requests
     const user = JSON.parse(localStorage.getItem('ptaUser') || '{}')
     if (user.token) {
       config.headers.Authorization = `Bearer ${user.token}`
