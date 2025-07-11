@@ -1,0 +1,184 @@
+/* UP Color Palette Theme */
+:root {
+  --up-maroon: rgb(123,17,19);
+  --up-forest-green: rgb(0,87,63);
+  --up-gold: rgb(255,215,0);
+  --up-white: rgb(255,255,255);
+  --up-light-gray: rgb(224,224,224);
+}
+
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+.bg-up-maroon {
+  background-color: var(--up-maroon) !important;
+}
+
+.bg-up-forest-green {
+  background-color: var(--up-forest-green) !important;
+}
+
+.bg-up-gold {
+  background-color: var(--up-gold) !important;
+}
+
+.bg-up-light-gray {
+  background-color: var(--up-light-gray) !important;
+}
+
+.text-up-maroon {
+  color: var(--up-maroon) !important;
+}
+
+.text-up-forest-green {
+  color: var(--up-forest-green) !important;
+}
+
+.text-up-gold {
+  color: var(--up-gold) !important;
+}
+
+.border-up-maroon {
+  border-color: var(--up-maroon) !important;
+}
+
+.border-up-forest-green {
+  border-color: var(--up-forest-green) !important;
+}
+
+
+.btn-up-maroon {
+  background-color: var(--up-maroon);
+  border-color: var(--up-maroon);
+  color: var(--up-white);
+}
+
+.btn-up-maroon:hover {
+  background-color: rgb(103,14,16);
+  border-color: rgb(103,14,16);
+  color: var(--up-white);
+}
+
+.btn-up-forest-green {
+  background-color: var(--up-forest-green);
+  border-color: var(--up-forest-green);
+  color: var(--up-white);
+}
+
+.btn-up-forest-green:hover {
+  background-color: rgb(0,67,43);
+  border-color: rgb(0,67,43);
+  color: var(--up-white);
+}
+
+.btn-outline-up-maroon {
+  color: var(--up-maroon);
+  border-color: var(--up-maroon);
+}
+
+.btn-outline-up-maroon:hover {
+  background-color: var(--up-maroon);
+  border-color: var(--up-maroon);
+  color: var(--up-white);
+}
+
+.btn-outline-up-forest-green {
+  color: var(--up-forest-green);
+  border-color: var(--up-forest-green);
+}
+
+.btn-outline-up-forest-green:hover {
+  background-color: var(--up-forest-green);
+  border-color: var(--up-forest-green);
+  color: var(--up-white);
+}
+
+
+.card-up-theme {
+  border: 2px solid var(--up-light-gray);
+  box-shadow: 0 4px 6px rgba(123,17,19,0.1);
+}
+
+.card-header-up-maroon {
+  background-color: var(--up-maroon);
+  color: var(--up-white);
+  border-bottom: 2px solid var(--up-maroon);
+}
+
+.card-header-up-forest-green {
+  background-color: var(--up-forest-green);
+  color: var(--up-white);
+  border-bottom: 2px solid var(--up-forest-green);
+}
+
+/* Form Enhancements */
+.form-control:focus {
+  border-color: var(--up-forest-green);
+  box-shadow: 0 0 0 0.2rem rgba(0,87,63,0.25);
+}
+
+.form-select:focus {
+  border-color: var(--up-forest-green);
+  box-shadow: 0 0 0 0.2rem rgba(0,87,63,0.25);
+}
+
+
+.badge-up-gold {
+  background-color: var(--up-gold);
+  color: var(--up-maroon);
+}
+
+.badge-up-maroon {
+  background-color: var(--up-maroon);
+  color: var(--up-white);
+}
+
+.badge-up-forest-green {
+  background-color: var(--up-forest-green);
+  color: var(--up-white);
+}
+
+
+.navbar-up-theme {
+  background: linear-gradient(135deg, var(--up-maroon) 0%, rgb(143,27,29) 100%);
+  border-bottom: 3px solid var(--up-gold);
+}
+
+
+.receipt-item {
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background-color: rgb(248,249,250);
+  border-left: 4px solid var(--up-forest-green);
+  border-radius: 4px;
+}
+
+.receipt-total {
+  background-color: var(--up-light-gray);
+  padding: 12px;
+  border-radius: 6px;
+  border: 2px solid var(--up-maroon);
+}
+
+/* Alert Enhancements */
+.alert-up-info {
+  background-color: rgba(0,87,63,0.1);
+  border-color: var(--up-forest-green);
+  color: var(--up-forest-green);
+}
+
+/* Input Group Enhancements */
+.input-group-text-up {
+  background-color: var(--up-light-gray);
+  border-color: var(--up-forest-green);
+  color: var(--up-maroon);
+}
