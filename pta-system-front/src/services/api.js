@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_BASE_URL = 'http://localhost:8080/api'
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api'
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -12,8 +12,11 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    // Temporarily remove API-KEY header to fix CORS issues
-    // config.headers['API-KEY'] = 'daccfc89-ff47-4ce1-99bf-5ad2d8f57282'
+    // Add API-KEY header for non-auth requests only (to avoid CORS issues with login)
+    const apiKey = import.meta.env.VITE_API_KEY
+    if (apiKey && !config.url.includes('/auth/')) {
+      config.headers['API-KEY'] = apiKey
+    }
 
     // Add Authorization header for authenticated requests
     const user = JSON.parse(localStorage.getItem('ptaUser') || '{}')
@@ -31,10 +34,22 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error) => {
+    // Log errors for debugging (only in development)
+    if (import.meta.env.DEV) {
+      console.error('API Error:', error)
+    }
+
     if (error.response?.status === 401) {
       localStorage.removeItem('ptaUser')
       window.location.href = '/login'
+    } else if (error.response?.status === 403) {
+      console.error('Access forbidden')
+    } else if (error.response?.status >= 500) {
+      console.error('Server error occurred')
+    } else if (!error.response) {
+      console.error('Network error - please check your connection')
     }
+
     return Promise.reject(error)
   }
 )
